@@ -1,1 +1,1 @@
-# MMM-Nebenan
+# Module: Nebenan

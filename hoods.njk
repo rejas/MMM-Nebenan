@@ -1,0 +1,38 @@
+{% if loaded %}
+    {% if config.showAsList %}
+      <ul class="hood-list">
+          {% for item in items %}
+              <li>
+                  <div class="small light">
+                      {{ item.publishDate }}:
+                  </div>
+                  <div class="bright medium light">
+                      {{ item.subject }}
+                  </div>
+              </li>
+          {% endfor %}
+      </ul>
+    {% else %}
+      <div class="small light">
+          {{ activeItem.publishDate }}:
+      </div>
+      <div class="bright medium light">
+          {{ activeItem.subject }}
+      </div>
+      <div class="small light">
+          {{ activeItem.body }}
+      </div>
+    {% endif %}
+{% elseif empty %}
+    <div class="small dimmed">
+        {{ "NEBENAN_NO_ITEMS" | translate | safe }}
+    </div>
+{% elseif error %}
+    <div class="small dimmed">
+        {{ "MODULE_CONFIG_ERROR" | translate({MODULE_NAME: "MMM-Nebenan", ERROR: error}) | safe }}
+    </div>
+{% else %}
+    <div class="small dimmed">
+        {{ "LOADING" | translate | safe }}
+    </div>
+{% endif %}

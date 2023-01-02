@@ -1,0 +1,8 @@
+.hood-list {
+  list-style: none;
+}
+
+.hood-list li {
+  text-align: justify;
+  margin-bottom: 0.5em;
+}
